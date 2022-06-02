@@ -52,14 +52,20 @@
                                 <li>
                                     <a class="dropdown-item" href="{% url 'account_logout' %}">
 
-                                        <i class="fas fa-sign-out"></i> Logout
+                                        <i class="fas fa-sign-out"></i> Chiqish
                                     </a>
                                 </li>
                                 {% else %}
                                 <li>
                                     <a class="dropdown-item" href="{% url 'account_login' %}">
 
-                                        <i class="fas fa-sign-in"></i>Login
+                                        <i class="fas fa-sign-in"></i>Kirish
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'account_signup' %}">
+
+                                        <i class="fas fa-sign-in"></i>Ro'yhatdan o'tish
                                     </a>
                                 </li>
                                 {% endif %}
