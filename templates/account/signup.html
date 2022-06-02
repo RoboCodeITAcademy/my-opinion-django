@@ -10,7 +10,7 @@
                 </div>
                 <form action="{% url 'account_signup' %}" method="post" class="p-1">
                     {% csrf_token %} {{form|crispy}}
-                    <input type="hidden" name="{{ redirect_field_name }}" value="{{redirect_field_value}}">
+
                     <br>
                     <button class="btn btn-outline-primary" type="submit">Ro'yhatdan o'tish</button>
                 </form>
