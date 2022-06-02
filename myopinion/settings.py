@@ -109,8 +109,15 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
+# ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = True
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+ACCOUNT_EMAIL_VERIFICATION = "none"
 SITE_ID = 1
 
+
+LOGIN_REDIRECT_URL = '/profile/'
+LOGIN_URL = '/accounts/login/'
+LOGOUT_URL = "/accounts/logout/"
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 

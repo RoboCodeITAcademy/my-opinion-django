@@ -8,12 +8,16 @@
                         Kirish formasi
                     </div>
                 </div>
-                <form action="#" method="post" class="p-1">
+                <form action="{% url 'account_login' %}" method="post" class="p-1">
                     {% csrf_token %} {{form|crispy}}
-                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{redirect_field_value}}">
                     <br>
                     <button class="btn btn-outline-primary" type="submit">Kirish</button>
                 </form>
+                <p>
+                    Agar hali akkaountingiz bo'lmasa u holda
+                    <a href="{{ signup_url }}">Ro'yhatdan o'ting.</a>
+                </p>
             </div>
         </div>
     </div>

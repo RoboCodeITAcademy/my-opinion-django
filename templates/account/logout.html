@@ -1,21 +1,28 @@
-{% extends "account/base.html" %}
+{% extends "wrapper.html" %} {% load i18n %} {% load crispy_forms_tags %} {% block content %}
+<div class="container">
+    <div class="row mt-5">
+        <div class="login d-flex flex-column justify-content-center">
+            <div class="card p-3 rounded border border-1 border-primary">
+                <div class="card-header">
+                    <div class="card-title fs-3 fw-bold">
+                        Siz saytdan chiqyapsiz!
+                    </div>
+                </div>
+                <form method="post" action="{% url 'account_logout' %}">
+                    {% csrf_token %} {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" /> {% endif %}
+                    <p class="py-2">
 
-{% load i18n %}
+                        <a href="/" class="fs-4 fw-5 text-decoration-none ">
+                            <i class="fas fa-home"></i> Bosh sahifa
+                        </a>
+                    </p>
+                    <button type="submit" class="btn btn-outline-danger">{% trans 'Chiqish' %}</button>
+                </form>
 
-{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+            </div>
+        </div>
+    </div>
 
-{% block content %}
-<h1>{% trans "Sign Out" %}</h1>
-
-<p>{% trans 'Are you sure you want to sign out?' %}</p>
-
-<form method="post" action="{% url 'account_logout' %}">
-  {% csrf_token %}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-  {% endif %}
-  <button type="submit">{% trans 'Sign Out' %}</button>
-</form>
-
-
+</div>
 {% endblock %}

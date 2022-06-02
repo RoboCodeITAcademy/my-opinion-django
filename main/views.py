@@ -5,3 +5,7 @@ from django.views.generic import TemplateView
 
 class HomeView(TemplateView):
     template_name = "index.html"
+
+
+def profile(request):
+    return render(request, "account/profile.html")

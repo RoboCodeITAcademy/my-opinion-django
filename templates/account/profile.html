@@ -1,0 +1,28 @@
+{% extends "wrapper.html" %} {% load i18n %} {% load crispy_forms_tags %} {% block content %}
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="login d-flex flex-column justify-content-center">
+            <div class="card p-3 rounded border border-1 border-primary">
+                <div class="card-header">
+                    <div class="card-title fs-3 fw-bold">
+                        Profile sahifasi
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img src="#" alt="">
+                    </div>
+                    <div class="col-sm-8">
+                        <ul>
+                            <li>{{request.user.username}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
