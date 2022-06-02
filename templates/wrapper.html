@@ -50,14 +50,14 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="{{account_logout}}">
+                                    <a class="dropdown-item" href="{% url 'account_logout' %}">
 
                                         <i class="fas fa-sign-out"></i> Logout
                                     </a>
                                 </li>
                                 {% else %}
                                 <li>
-                                    <a class="dropdown-item" href="{{account_login}}">
+                                    <a class="dropdown-item" href="{% url 'account_login' %}">
 
                                         <i class="fas fa-sign-in"></i>Login
                                     </a>
