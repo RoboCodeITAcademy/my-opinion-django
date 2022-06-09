@@ -1,10 +1,10 @@
 {% extends 'wrapper.html' %} {% block content %}
 <section class="d-flex justify-content-center flex-column mt-5">
     <div class="container">
-        <h2>Mening maqolalarim</h2>
+        <h2>{{post.title}}</h2>
         <div class="row">
-            {% for post in object_list %}
-            <div class="col-sm-12 col-md-12 col-lg-6 my-1">
+
+            <div class="col-sm-12 col-md-12 col-lg-12 my-1">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <div class="fs-4">{{post.title}}</div>
@@ -24,11 +24,11 @@
                                 <p>{{post.body|truncatewords:"20"}}</p>
                             </div>
                         </div>
-                        <a href="{% url 'main:detail' post.id %}" class="btn btn-outline-primary mt-2">Batafsil</a>
+
                     </div>
                 </div>
             </div>
-            {% endfor %}
+
         </div>
     </div>
 </section>

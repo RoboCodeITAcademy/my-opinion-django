@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
-from django.views.generic import TemplateView, ListView
+from django.views.generic import TemplateView, ListView, DetailView
 from .models import Profile, Post
 from .forms import AddPostForm
 # Create your views here.
@@ -24,6 +24,11 @@ def create_post(request):
     else:
         form = AddPostForm()
     return render(request, "post/add.html", {"form": form})
+
+
+class PostDetailView(DetailView):
+    model = Post
+    template_name = "post/detail.html"
 
 
 class DeletePostView(DeleteView):
