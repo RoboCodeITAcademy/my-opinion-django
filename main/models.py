@@ -1,6 +1,7 @@
 
 from django.db import models
 from django.contrib.auth.models import User
+from django.conf import settings
 """
 Profile 
     name , surname ,email,avatar ,gender, age, adress,bio, follows , followers
@@ -59,13 +60,15 @@ class Emoji(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=250, blank=True)
-    slug = models.SlugField(unique=True, max_length=200)
     body = models.TextField(blank=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='user')
     tag = models.ForeignKey(Tag, on_delete=models.PROTECT, related_name='tags')
     emoji = models.ForeignKey(
         Emoji, on_delete=models.PROTECT, related_name="emojies")
+
+    # def save(self, *args, **kwargs):
+    #     super(Post, self).save(*args, **kwargs)
 
     def __str__(self):
         return f"{self.title}"

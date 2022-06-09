@@ -24,7 +24,14 @@
                                 <p>{{post.body|truncatewords:"20"}}</p>
                             </div>
                         </div>
-
+                        <div class="d-flex justify-content-around mt-2">
+                            <a href="{% url 'main:delete' post.id %}" class="btn btn-outline-danger">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                            <a href="{% url 'main:edit' post.id %}" class="btn btn-outline-danger">
+                                <i class="fas fa-pen"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

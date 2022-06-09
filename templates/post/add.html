@@ -1,0 +1,13 @@
+{% extends 'wrapper.html' %} {% load crispy_forms_tags %} {% block content %}
+<section class="d-flex justify-content-center flex-column mt-5">
+    <div class="container">
+        <h2>Maqola qo'shish</h2>
+        <form action="" method="post" class="w-25">
+            {% csrf_token %} {{form|crispy}}
+            <br>
+            <input type="submit" value="Qo'shish" class="btn btn-outline-primary">
+        </form>
+    </div>
+</section>
+
+{% endblock %}

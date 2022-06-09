@@ -17,4 +17,3 @@ admin.site.register(Emoji)
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     list_display = ["title", "author", "tag"]
-    prepopulated_fields = {"slug": ("title",)}
