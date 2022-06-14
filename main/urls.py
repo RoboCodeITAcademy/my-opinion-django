@@ -9,6 +9,7 @@ urlpatterns = [
 
     # PROFILE
     path("profile/", views.profile, name="profile"),
+    path("profile/<str:user_name>/", views.other_profile, name="other_profile"),
     path("profile/edit/<pk>/", views.ProfileEditView.as_view(), name='profile_edit'),
     path("posts/", views.user_posts, name="user_posts"),
     path("detail/<int:pk>/", views.PostDetailView.as_view(), name="detail"),

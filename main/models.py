@@ -74,5 +74,15 @@ class Post(models.Model):
         return f"{self.title}"
 
 
+class Followers(models.Model):
+    user = models.OneToOneField(
+        User, on_delete=models.CASCADE)
+    another_user = models.ManyToManyField(
+        User, related_name='another_user')
+
+    def __str__(self):
+        return self.user.username
+
+
 class Comment(models.Model):
     pass

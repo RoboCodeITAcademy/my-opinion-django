@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy, reverse
+from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from django.views.generic import TemplateView, ListView, DetailView
@@ -53,6 +54,13 @@ def user_posts(request):
 @login_required
 def profile(request):
     return render(request, "account/profile.html")
+
+
+@login_required
+def other_profile(request, user_name):
+    user = User.objects.get(username=user_name)
+
+    return render(request, "account/profile.html", {"user": user, "status": "other"})
 
 
 class ProfileEditView(UpdateView):
