@@ -7,6 +7,7 @@ urlpatterns = [
     path("", views.HomeView.as_view(), name="home"),
     path("add/", views.create_post, name="add"),
 
+    path('follow/<user_name>', views.follow_user, name='follow'),
     # PROFILE
     path("profile/", views.profile, name="profile"),
     path("profile/<str:user_name>/", views.other_profile, name="other_profile"),

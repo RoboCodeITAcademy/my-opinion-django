@@ -34,12 +34,14 @@
                                         <p class="text-muted mb-1">Full Stack Developer</p>
                                         <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
                                         <div class="d-flex justify-content-center mb-2">
-                                            <a href="#">
-                                                <button type="button" class="btn btn-primary">Obuna bo'lish</button>
-                                            </a>
+
                                             {% if request.user.username == user.username %}
                                             <a href="{% url 'main:profile_edit' user.profile.id %}">
                                                 <button type="button" class="btn btn-outline-primary ms-1">Tahrirlash</button>
+                                            </a>
+                                            {% else %}
+                                            <a href="{% url 'main:follow' user.username %}">
+                                                <button type="button" class="btn btn-primary">Obuna bo'lish</button>
                                             </a>
                                             {% endif %}
                                         </div>
